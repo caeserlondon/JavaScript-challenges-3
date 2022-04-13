@@ -73,14 +73,22 @@
 
 /// solution 1  ; using   arguments, indexOf, filter
 
-function seekAnddestroy(arr) {
-	const args = Array.from(arguments);
+// function seekAnddestroy(arr) {
+// 	const args = Array.from(arguments);
 
-	function filterArr(arr) {
-		// return true if NOT in array
-		return args.indexOf(arr) === -1;
-	}
-	return arr.filter(filterArr);
+// 	function filterArr(arr) {
+// 		// return true if NOT in array
+// 		return args.indexOf(arr) === -1;
+// 	}
+// 	return arr.filter(filterArr);
+// }
+
+// console.log(seekAnddestroy([2, 3, 4, 6, 6, "hello"], 2, 6));
+
+//// solution 2  using  ...rest, filter and include.
+
+function seekAnddestroy(arr, ...rest) {
+	return arr.filter((val) => !rest.includes(val));
 }
 
 console.log(seekAnddestroy([2, 3, 4, 6, 6, "hello"], 2, 6));
