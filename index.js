@@ -188,15 +188,17 @@
 ///// CHALLENGE 7  FIND THE LONGEST WORD IN A STRING
 /// solution
 
-function longestWord(str) {
-	let words = str.split(" ");
-	let longest = "";
+// function longestWord(str) {
+// 	let words = str.split(" ");
+// 	let longest = "";
 
-	for (let word of words) {
-		if (word.length > longest.length) {
-			longest = word;
-		}
-	}
-	return longest;
-}
-console.log(longestWord("my name is caeser"));
+// 	for (let word of words) {
+// 		if (word.length > longest.length) {
+// 			longest = word;
+// 		}
+// 	}
+// 	return longest;
+// }
+// console.log(longestWord("my name is caeser"));
+
+///////////////////////////////////////////
