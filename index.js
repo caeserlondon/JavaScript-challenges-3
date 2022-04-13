@@ -18,10 +18,18 @@
 
 //// solution 2
 ///  using  ...rest and forEach loop.
-function addAll(...numbers) {
-	let sum = 0;
-	numbers.forEach((num) => (sum += num));
-	return sum;
-}
+// function addAll(...numbers) {
+// 	let sum = 0;
+// 	numbers.forEach((num) => (sum += num));
+// 	return sum;
+// }
 
+// console.log(addAll(2, 5, 5, 6, 7));
+
+/////////////
+// solution 3  using ...rest and reduce
+
+function addAll(...numbers) {
+	return numbers.reduce((sum, num) => sum + num);
+}
 console.log(addAll(2, 5, 5, 6, 7));
