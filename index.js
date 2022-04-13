@@ -152,18 +152,33 @@
 // ex missingLetters('abce') == 'd'
 /// missingLetters(a to z) == undefind.
 
-function missingLetters(str) {
-	let compare = str.charCodeAt(0);
-	let missing;
+// function missingLetters(str) {
+// 	let compare = str.charCodeAt(0);
+// 	let missing;
 
-	str.split("").map((char, i) => {
-		if (str.charCodeAt(i) === compare) {
-			++compare;
-		} else {
-			missing = String.fromCharCode(compare);
-		}
-	});
-	return missing;
+// 	str.split("").map((char, i) => {
+// 		if (str.charCodeAt(i) === compare) {
+// 			++compare;
+// 		} else {
+// 			missing = String.fromCharCode(compare);
+// 		}
+// 	});
+// 	return missing;
+// }
+
+// console.log(missingLetters("abce"));
+
+/////////////////////////////////////////////////////////
+/// CHALLENG 6 : EVEN AND ODD SUMS
+// take in an array and return an array of the sums of even and odd numbers
+/// ex  evenOddSums([50, 60, 60, 45, 71]) == [170, 116]
+function evenOddSums(arr) {
+	let evenSum = 0;
+	let oddSum = 0;
+
+	arr.forEach((num) => (num % 2 === 0 ? (evenSum += num) : (oddSum += num)));
+
+	return [evenSum, oddSum];
 }
 
-console.log(missingLetters("abce"));
+console.log(evenOddSums([50, 60, 60, 45, 71]));
