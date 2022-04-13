@@ -128,19 +128,42 @@
 // const a = [-1, 150, 160, 170, -1, -1, 180, 190];
 // console.log(sortByHight(a));
 
-////  solution 1 refractured
+///////  solution 1 refractured
 
-function sortByHight(a) {
-	const arr1 = [];
-	const arr2 = [];
+// function sortByHight(a) {
+// 	const arr1 = [];
+// 	const arr2 = [];
 
-	a.forEach((val, i) => (val === -1 ? arr1.push(i) : arr2.push(val)));
+// 	a.forEach((val, i) => (val === -1 ? arr1.push(i) : arr2.push(val)));
 
-	const sortArr = arr2.sort((prev, next) => prev - next);
+// 	const sortArr = arr2.sort((prev, next) => prev - next);
 
-	arr1.forEach((val, i) => sortArr.splice(arr1[i], 0, -1));
-	return sortArr;
+// 	arr1.forEach((val, i) => sortArr.splice(arr1[i], 0, -1));
+// 	return sortArr;
+// }
+
+// const a = [-1, 150, 160, 170, -1, -1, 180, 190];
+// console.log(sortByHight(a));
+
+////////////////////////////////////////////////
+/// CHALLENGE 5 MISSING LETTERS
+//  find the missing letter in the passed letter range and return it.
+/// if all letters are present, return undefind.
+// ex missingLetters('abce') == 'd'
+/// missingLetters(a to z) == undefind.
+
+function missingLetters(str) {
+	let compare = str.charCodeAt(0);
+	let missing;
+
+	str.split("").map((char, i) => {
+		if (str.charCodeAt(i) === compare) {
+			++compare;
+		} else {
+			missing = String.fromCharCode(compare);
+		}
+	});
+	return missing;
 }
 
-const a = [-1, 150, 160, 170, -1, -1, 180, 190];
-console.log(sortByHight(a));
+console.log(missingLetters("abce"));
