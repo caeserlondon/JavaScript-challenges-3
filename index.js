@@ -41,24 +41,46 @@
 // A prime number is a whole number greater than 1 whoes only factors are 1 and itself.
 /// EX   sumAllPrime(10) == 17
 
-function sumAllPrime(num) {
-	let sum = 0;
+// function sumAllPrime(num) {
+// 	let sum = 0;
 
-	function checkForPrime(i) {
-		for (let x = 2; x < i; x++) {
-			if (i % x === 0) {
-				return false;
-			}
-		}
-		return true;
-	}
+// 	function checkForPrime(i) {
+// 		for (let x = 2; x < i; x++) {
+// 			if (i % x === 0) {
+// 				return false;
+// 			}
+// 		}
+// 		return true;
+// 	}
 
-	for (let i = 2; i <= num; i++) {
-		if (checkForPrime(i)) {
-			sum += i;
-		}
+// 	for (let i = 2; i <= num; i++) {
+// 		if (checkForPrime(i)) {
+// 			sum += i;
+// 		}
+// 	}
+// 	return sum;
+// }
+
+// console.log(sumAllPrime(10));
+
+///////////////////////////////////////
+
+//// CHALLENGE 3 : SEEK AND DESTROY
+
+//// remove from the array whatever is in the following arguments.
+/// and return left over values in an array.
+/// ex  seekAnddestroy([2, 3, 4, 6, 6, 'hello'],2,6)  == [3, 4, 'hello']
+
+/// solution 1  ; using   arguments, indexOf, filter
+
+function seekAnddestroy(arr) {
+	const args = Array.from(arguments);
+
+	function filterArr(arr) {
+		// return true if NOT in array
+		return args.indexOf(arr) === -1;
 	}
-	return sum;
+	return arr.filter(filterArr);
 }
 
-console.log(sumAllPrime(10));
+console.log(seekAnddestroy([2, 3, 4, 6, 6, "hello"], 2, 6));
