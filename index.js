@@ -104,24 +104,41 @@
 
 /// solution 1
 
+// function sortByHight(a) {
+// 	const arr1 = [];
+// 	const arr2 = [];
+
+// 	a.forEach((val, index) => {
+// 		if (val === -1) {
+// 			arr1.push(index);
+// 		} else {
+// 			arr2.push(val);
+// 		}
+// 	});
+// 	// console.log(arr1, arr2);
+// 	/// to sort from lowest to highest  (preveus - next) ... or highest to lowest (next - preveus)
+
+// 	const sortArr = arr2.sort((prev, next) => prev - next);
+// 	// console.log(sortArr);
+
+// 	arr1.forEach((val, index) => sortArr.splice(arr1[index], 0, -1));
+// 	return sortArr;
+// }
+
+// const a = [-1, 150, 160, 170, -1, -1, 180, 190];
+// console.log(sortByHight(a));
+
+////  solution 1 refractured
+
 function sortByHight(a) {
 	const arr1 = [];
 	const arr2 = [];
 
-	a.forEach((val, index) => {
-		if (val === -1) {
-			arr1.push(index);
-		} else {
-			arr2.push(val);
-		}
-	});
-	// console.log(arr1, arr2);
-	/// to sort from lowest to highest  (preveus - next) ... or highest to lowest (next - preveus)
+	a.forEach((val, i) => (val === -1 ? arr1.push(i) : arr2.push(val)));
 
 	const sortArr = arr2.sort((prev, next) => prev - next);
-	// console.log(sortArr);
 
-	arr1.forEach((val, index) => sortArr.splice(arr1[index], 0, -1));
+	arr1.forEach((val, i) => sortArr.splice(arr1[i], 0, -1));
 	return sortArr;
 }
 
