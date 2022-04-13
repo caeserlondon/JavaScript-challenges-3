@@ -102,7 +102,7 @@
 /// EX. a = [-1, 150, 190, 170, -1, -1, 180, 190]
 // sortByHight(a) == [-1, 150, 160, 170, -1, -1, 180, 190];
 
-/// solution
+/// solution 1
 
 function sortByHight(a) {
 	const arr1 = [];
