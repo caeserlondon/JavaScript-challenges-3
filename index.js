@@ -172,13 +172,31 @@
 /// CHALLENG 6 : EVEN AND ODD SUMS
 // take in an array and return an array of the sums of even and odd numbers
 /// ex  evenOddSums([50, 60, 60, 45, 71]) == [170, 116]
-function evenOddSums(arr) {
-	let evenSum = 0;
-	let oddSum = 0;
+// function evenOddSums(arr) {
+// 	let evenSum = 0;
+// 	let oddSum = 0;
 
-	arr.forEach((num) => (num % 2 === 0 ? (evenSum += num) : (oddSum += num)));
+// 	arr.forEach((num) => (num % 2 === 0 ? (evenSum += num) : (oddSum += num)));
 
-	return [evenSum, oddSum];
+// 	return [evenSum, oddSum];
+// }
+
+// console.log(evenOddSums([50, 60, 60, 45, 71]));
+
+////////////////////////////////////////////////
+
+///// CHALLENGE 7  FIND THE LONGEST WORD IN A STRING
+/// solution
+
+function longestWord(str) {
+	let words = str.split(" ");
+	let longest = "";
+
+	for (let word of words) {
+		if (word.length > longest.length) {
+			longest = word;
+		}
+	}
+	return longest;
 }
-
-console.log(evenOddSums([50, 60, 60, 45, 71]));
+console.log(longestWord("my name is caeser"));
